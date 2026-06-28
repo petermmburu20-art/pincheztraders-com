@@ -1,0 +1,279 @@
+.dtrader {
+  padding: 20px;
+  background: #f5f5f5;
+  border-radius: 8px;
+  max-width: 1000px;
+  margin: 20px auto;
+
+  h2 {
+    color: #333;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ffc107;
+    padding-bottom: 10px;
+  }
+
+  .dtrader-section {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    h3 {
+      color: #ffc107;
+      margin-bottom: 15px;
+      font-size: 1.1em;
+    }
+  }
+
+  .account-section {
+    .account-info {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      align-items: flex-start;
+    }
+
+    .balance-box {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 20px;
+      border-radius: 8px;
+      min-width: 250px;
+      text-align: center;
+
+      .balance-label {
+        font-size: 0.9em;
+        opacity: 0.9;
+        margin-bottom: 5px;
+      }
+
+      .balance-value {
+        font-size: 2em;
+        font-weight: 700;
+      }
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 15px;
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .stat-item {
+      background: #f9f9f9;
+      padding: 15px;
+      border-radius: 4px;
+      text-align: center;
+      border: 1px solid #e0e0e0;
+
+      .stat-label {
+        color: #666;
+        font-size: 0.85em;
+        margin-bottom: 5px;
+      }
+
+      .stat-value {
+        font-size: 1.5em;
+        font-weight: 700;
+        color: #333;
+      }
+    }
+
+    .not-connected {
+      background: #fff3cd;
+      border-left: 4px solid #ffc107;
+      padding: 15px;
+      border-radius: 4px;
+      color: #856404;
+    }
+  }
+
+  .trading-panel {
+    .trade-inputs {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .input-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+
+      @media (max-width: 600px) {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      label {
+        font-weight: 600;
+        color: #333;
+      }
+
+      input,
+      select {
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 1em;
+
+        &:focus {
+          outline: none;
+          border-color: #ffc107;
+          box-shadow: 0 0 5px rgba(255, 193, 7, 0.3);
+        }
+      }
+    }
+
+    .direction-buttons {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+
+      .btn-direction {
+        padding: 12px;
+        border: 2px solid #ddd;
+        background: white;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: all 0.3s;
+
+        &:hover {
+          border-color: #ffc107;
+        }
+
+        &.active {
+          background: #ffc107;
+          color: white;
+          border-color: #ffc107;
+        }
+      }
+    }
+
+    .btn-trade {
+      padding: 15px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 1.1em;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s;
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      }
+    }
+  }
+
+  .positions-section {
+    .positions-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .position-card {
+      border-left: 4px solid #ffc107;
+      padding: 15px;
+      background: #f9f9f9;
+      border-radius: 4px;
+      transition: all 0.3s;
+
+      &.status-won {
+        border-left-color: #28a745;
+        background: #f0fdf4;
+      }
+
+      &.status-lost {
+        border-left-color: #dc3545;
+        background: #fef2f2;
+      }
+
+      &.status-pending {
+        border-left-color: #17a2b8;
+        background: #f0f8ff;
+      }
+
+      .position-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+        .position-symbol {
+          font-weight: 700;
+          font-size: 1.1em;
+          color: #333;
+        }
+
+        .position-type {
+          font-weight: 600;
+
+          &.CALL {
+            color: #28a745;
+          }
+
+          &.PUT {
+            color: #dc3545;
+          }
+        }
+
+        .position-status {
+          font-weight: 600;
+          padding: 4px 8px;
+          border-radius: 3px;
+          font-size: 0.85em;
+
+          &.won {
+            background: #28a745;
+            color: white;
+          }
+
+          &.lost {
+            background: #dc3545;
+            color: white;
+          }
+
+          &.pending {
+            background: #17a2b8;
+            color: white;
+          }
+        }
+      }
+
+      .position-details {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 10px;
+
+        .detail-item {
+          display: flex;
+          justify-content: space-between;
+          color: #666;
+          font-size: 0.9em;
+
+          .label {
+            font-weight: 600;
+          }
+
+          .value {
+            font-weight: 700;
+          }
+        }
+      }
+    }
+  }
+}

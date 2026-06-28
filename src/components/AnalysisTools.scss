@@ -1,0 +1,143 @@
+.analysis-tools {
+  padding: 20px;
+  background: #f5f5f5;
+  border-radius: 8px;
+  max-width: 1000px;
+  margin: 20px auto;
+
+  h2 {
+    color: #333;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+  }
+
+  .analysis-section {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    h3 {
+      color: #007bff;
+      margin-bottom: 15px;
+      font-size: 1.1em;
+    }
+  }
+
+  .symbol-selector {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+
+    .symbol-btn {
+      padding: 10px 15px;
+      border: 2px solid #ddd;
+      background: white;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s;
+
+      &:hover {
+        border-color: #007bff;
+        color: #007bff;
+      }
+
+      &.active {
+        background: #007bff;
+        color: white;
+        border-color: #007bff;
+      }
+    }
+  }
+
+  .signal-summary {
+    .signal-box {
+      border-left: 4px solid;
+      padding: 20px;
+      background: #f9f9f9;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      .signal-indicator {
+        padding: 15px 25px;
+        border-radius: 4px;
+        color: white;
+        font-weight: 700;
+        font-size: 1.2em;
+        min-width: 150px;
+        text-align: center;
+      }
+
+      p {
+        margin: 0;
+        color: #666;
+      }
+    }
+  }
+
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+  }
+
+  .metric-card {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 4px;
+    text-align: center;
+    border: 1px solid #e0e0e0;
+
+    .metric-value {
+      font-size: 1.8em;
+      font-weight: 700;
+      color: #007bff;
+      margin-bottom: 5px;
+    }
+
+    .metric-label {
+      color: #666;
+      font-size: 0.9em;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .metric-info {
+      color: #999;
+      font-size: 0.85em;
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px solid #e0e0e0;
+    }
+  }
+
+  .progress-bar {
+    background: #e0e0e0;
+    height: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 10px;
+
+    .progress {
+      background: linear-gradient(90deg, #28a745, #007bff);
+      height: 100%;
+      transition: width 0.3s;
+    }
+  }
+
+  .loading-message {
+    background: #e3f2fd;
+    border-left: 4px solid #2196f3;
+    padding: 15px;
+    border-radius: 4px;
+    color: #1976d2;
+    font-weight: 600;
+    text-align: center;
+    margin: 20px 0;
+  }
+}
